@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.AddEditClassPage"
+             Title="Add/Edit Class">
+
+    <StackLayout>
+        <Entry x:Name="NameEntry" Placeholder="Numele clasei"/>
+        <Entry x:Name="DescriptionEntry" Placeholder="Descrierea clasei"/>
+        <Entry x:Name="LocationEntry" Placeholder="Locatia clasei"/>
+        <DatePicker x:Name="scheduleDatePicker"/>
+        <TimePicker x:Name="scheduleTimePicker"/>
+        <Entry x:Name="PriceEntry" Placeholder="Prețul clasei" Keyboard="Numeric"/>
+        <Entry x:Name="MaxCapacityEntry" Placeholder="Capacitatea maximă" Keyboard="Numeric"/>
+        <Picker x:Name="InstructorPicker"
+        Title="Select an Instructor"
+        ItemDisplayBinding="{Binding FullName}" />
+        <Button Text="Salvează Clasa" Clicked="OnSaveClicked"/>
+    </StackLayout>
+</ContentPage>

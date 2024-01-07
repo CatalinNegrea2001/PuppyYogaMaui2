@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.ReserveClassPage">
+
+    <StackLayout Spacing="20" Padding="30">
+        <Label Text="Rezervare Clasă" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               FontAttributes="Bold" />
+
+        <Label x:Name="ClassName" 
+               FontSize="18" 
+               HorizontalOptions="Center" />
+        <Label x:Name="ClassDate" 
+               FontSize="18" 
+               HorizontalOptions="Center" />
+        <Label x:Name="ClassTime" 
+               FontSize="18" 
+               HorizontalOptions="Center" />
+
+        <Entry Placeholder="Numele tău" 
+               x:Name="NameEntry"
+               Margin="0,0,0,5"/>
+        <Entry x:Name="EmailEntry"
+               Placeholder="Email"
+               Margin="0,0,0,5"
+               Text="{Binding Email, Mode=TwoWay}" />
+        <Entry x:Name="PhoneEntry"
+               Placeholder="Phone Number"
+               Margin="0,0,0,5"
+               Text="{Binding PhoneNumber, Mode=TwoWay}" />
+        <Button Text="Rezervă Clasa" 
+                Clicked="OnReserveClassClicked" 
+                BackgroundColor="#F88379" 
+                TextColor="White" 
+                FontSize="18" 
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+</ContentPage>

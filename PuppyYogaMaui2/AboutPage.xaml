@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.AboutPage">
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="20">
+
+            <Image Source="about_us_image.jpg" HeightRequest="200" HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Despre Noi" FontSize="24" HorizontalOptions="Center" />
+
+            <Label Text="Suntem o echipă dedicată pasionaților de yoga și iubitorilor de câini. Puppy Yoga aduce împreună cele două iubiri pentru a vă oferi o experiență unică de relaxare și legătură cu natura și animalele de companie." FontSize="18" />
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

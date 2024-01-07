@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout
+            Spacing="25"
+            Padding="30">
+
+            <Image
+                Source="puppy_yoga_image.jpg"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                WidthRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Bine ați venit la Puppy Yoga!"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0" />
+
+            <Label
+                Text="Momente de liniște alături de cei mai blânzi însoțitori."
+                FontSize="18"
+                TextColor="#4A4A4A"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                LineHeight="1.4"
+                Margin="0,0,0,10"
+                Shadow="{StaticResource LabelShadowStyle}"     
+            />
+
+
+            <Button
+                x:Name="BookClassBtn"
+                Text="Rezervați o clasă"
+                Clicked="OnBookClassClicked"
+                BackgroundColor="#F88379"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="8"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Margin="0,5,0,5"
+                Shadow="{StaticResource ButtonShadowStyle}" />
+
+            <Button
+                x:Name="AboutUsBtn"
+                Text="Despre Noi"
+                Clicked="OnAboutUsClicked"
+                BackgroundColor="#008080"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="8"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Margin="0,5,0,5"
+                Shadow="{StaticResource ButtonShadowStyle}" />
+
+            <Button
+                x:Name="GalleryBtn"
+                Text="Galerie"
+                Clicked="OnGalleryClicked"
+                BackgroundColor="#B2AC88"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="8"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Margin="0,5,0,5"
+                Shadow="{StaticResource ButtonShadowStyle}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.AddEditInstructorPage"
+             Title="Add/Edit Instructor">
+
+    <StackLayout Padding="10">
+        <Entry x:Name="FirstNameEntry" Placeholder="First Name"/>
+        <Entry x:Name="LastNameEntry" Placeholder="Last Name"/>
+        <Editor x:Name="BioEditor" Placeholder="Bio" HeightRequest="100"/>
+        <Button Text="Save" Clicked="OnSaveClicked"/>
+    </StackLayout>
+</ContentPage>

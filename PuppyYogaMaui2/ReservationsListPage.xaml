@@ -1,0 +1,72 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.ReservationsListPage"
+             Title="Reservations List">
+
+    <ScrollView>
+        <CollectionView x:Name="ReservationsCollectionView" ItemsSource="{Binding Reservations}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10" CornerRadius="10" BorderColor="#dddddd" BackgroundColor="#FDEDEC">
+                        <Grid Padding="15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="Auto" />
+                                
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Grid.Row="0" Spacing="3">
+                                <Label Text="{Binding ClassName}" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Large" 
+                                       TextColor="DarkSlateGray" />
+                                <Label Text="{Binding ClassDate, StringFormat='{0:dd/MM/yyyy}'}" 
+                                       FontSize="Small" 
+                                       TextColor="DarkSlateGray" />
+                                <Label Text="{Binding ClassTime, StringFormat='{0:HH:mm}'}" 
+                                       FontSize="Small" 
+                                       TextColor="DarkSlateGray" />
+                            </StackLayout>
+
+                            <BoxView Grid.Row="2" BackgroundColor="#dddddd" HeightRequest="1" Margin="0,5,0,5" />
+
+                            <StackLayout Grid.Column="0" Grid.Row="3" Spacing="3">
+                                <Label Text="{Binding CustomerName}" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Large"
+                                       TextColor="DarkSlateGray" />
+                                <Label Text="{Binding Email}" 
+                                       FontSize="Medium" 
+                                       TextColor="DarkSlateGray" />
+                                <Label Text="{Binding PhoneNumber}" 
+                                       FontSize="Medium" 
+                                       TextColor="DarkSlateGray" />
+                            </StackLayout>
+
+                            <Label Text="🗑️"
+                                   Grid.Column="1"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="4"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"
+                                   FontSize="Large" 
+                                   Margin="10"
+                                   TextColor="DarkRed">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnDeleteReservationTapped"
+                                                          CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483371330774",
+    "project_id": "puppyyogamaui",
+    "storage_bucket": "puppyyogamaui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483371330774:android:b972a9f3365516008ead77",
+        "android_client_info": {
+          "package_name": "com.mycompany.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaL4EcUSf-AQnBl6zInZDwt-o8peN89V4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

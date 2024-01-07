@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PuppyYogaMaui2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PuppyYogaMaui2"
+    x:Name="MyAppShell"
+    >
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Label Text="{Binding Title}"
+                       TextColor="Black" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+ 
+    <TabBar>
+       
+            <ShellContent Title="Home"
+              ContentTemplate="{DataTemplate local:MainPage}"
+              Route="MainPage" />
+        
+        <ShellContent Title="Classes"
+                      ContentTemplate="{DataTemplate local:ClassesPage}"
+                      Route="ClassesPage" />
+        <ShellContent Title="Instructors"
+                      ContentTemplate="{DataTemplate local:InstructorsPage}"
+                      Route="InstructorsPage" />
+        <ShellContent 
+                      Title="Reservations" 
+                      ContentTemplate="{DataTemplate local:ReservationsListPage}" 
+                     Route="ReservationsListPage" 
+        />
+    </TabBar>
+</Shell>
+

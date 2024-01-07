@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuppyYogaMaui2.InstructorsPage"
+             Title="InstructorsPage"
+             Shell.NavBarIsVisible="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="➕"
+                     Clicked="OnAddInstructorClicked"
+                     Priority="0"
+                     Order="Primary" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <CollectionView x:Name="InstructorsCollectionView"
+                            ItemsSource="{Binding Instructors}"
+                            Grid.Row="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="5" CornerRadius="10" BorderColor="#ccc">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Row="0" Margin="5">
+                                    <Label Text="{Binding FullName}" 
+                                           FontAttributes="Bold" 
+                                           FontSize="Medium"/>
+                                    <Label Text="{Binding Bio}" 
+                                           FontSize="Small" 
+                                           LineBreakMode="WordWrap"/>
+                                </StackLayout>
+
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Text="View Feedback" Grid.Column="0"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnViewFeedbackClicked" 
+                                            Style="{StaticResource SecondaryButtonStyle}" />
+                                    <Button Text="Add Feedback" Grid.Column="1"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnAddFeedbackClicked" 
+                                            Style="{StaticResource SecondaryButtonStyle}" />
+                                </Grid>
+
+                                <Label Text="🗑️"
+                                       Grid.Row="0"
+                                       VerticalOptions="Start"
+                                       HorizontalOptions="End">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnDeleteInstructorTapped"
+                                                              CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnInstructorTapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+</ContentPage>
